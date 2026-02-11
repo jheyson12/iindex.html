@@ -3,146 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitaciones San Valentín 💖</title>
-
+<title>Invitaciones San Valentín 💖 | AmorDigital</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-
-body{
-background:linear-gradient(135deg,#ff4d6d,#ff758c);
-color:#333;
-}
+body{background:#fff;color:#333}
 
 /* NAV */
 nav{
-background:white;
+background:#ff4d6d;
+color:white;
 padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 4px 20px rgba(0,0,0,.1);
-position:sticky;
-top:0;
-z-index:1000;
 }
-
-nav h2{
-color:#ff4d6d;
-font-weight:700;
-}
-
-nav a{
-text-decoration:none;
-color:#ff4d6d;
-font-weight:600;
-}
+nav h2{font-weight:700}
+nav a{color:white;text-decoration:none;font-weight:600}
 
 /* HERO */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+background:linear-gradient(135deg,#ff4d6d,#ff758c);
 color:white;
-padding:20px;
-}
-
-.hero h1{
-font-size:3rem;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:1.2rem;
-max-width:600px;
-margin-bottom:25px;
-}
-
-.btn{
-background:white;
-color:#ff4d6d;
-padding:14px 30px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-background:#ffe5ec;
-}
-
-/* MUESTRAS */
-.section{
-padding:80px 8%;
-background:#fff;
-}
-
-.section h2{
 text-align:center;
-margin-bottom:50px;
-color:#ff4d6d;
-font-size:2rem;
+padding:100px 20px;
+}
+.hero h1{font-size:3rem;margin-bottom:15px}
+.hero p{max-width:600px;margin:auto;margin-bottom:25px}
+.btn-main{
+background:white;color:#ff4d6d;
+padding:12px 25px;border-radius:30px;
+text-decoration:none;font-weight:600;
 }
 
+/* CARDS */
+.section{padding:80px 8%}
+.section h2{text-align:center;color:#ff4d6d;margin-bottom:50px}
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
-
 .card{
-background:#fffdf7;
+background:#fff;
 border-radius:20px;
-padding:20px;
 box-shadow:0 15px 35px rgba(0,0,0,.08);
+overflow:hidden;
 transition:.4s;
 }
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-border-radius:15px;
-margin-bottom:15px;
-}
-
-.card h3{
-color:#ff4d6d;
-margin-bottom:10px;
-}
-
-.price{
-font-size:1.5rem;
-font-weight:700;
-color:#222;
-margin:10px 0;
-}
-
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-content{padding:20px}
+.price{font-size:1.6rem;font-weight:700;color:#ff4d6d;margin:10px 0}
 .buy-btn{
 display:inline-block;
-margin-top:10px;
 background:#25D366;
 color:white;
 padding:10px 20px;
 border-radius:25px;
 text-decoration:none;
-font-weight:600;
+margin-top:10px;
+}
+
+/* PAYMENT */
+.payment{
+background:#fff0f3;
+padding:50px 8%;
+text-align:center;
+}
+.payment h3{color:#ff4d6d;margin-bottom:15px}
+.number{
+font-size:1.8rem;
+font-weight:700;
+margin:15px 0;
+}
+
+/* TESTIMONIOS */
+.testimonials{
+background:#fafafa;
+padding:80px 8%;
+}
+.testimonials h2{text-align:center;color:#ff4d6d;margin-bottom:40px}
+.testimonial{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+margin-bottom:20px;
 }
 
 /* FOOTER */
 footer{
 background:#222;
 color:white;
-text-align:center;
+padding:40px 8%;
+font-size:0.9rem;
+}
+footer h4{margin-bottom:10px}
+footer p{opacity:.8}
+
+/* MODAL LIBRO */
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+justify-content:center;
+align-items:center;
+}
+.modal-content{
+background:white;
 padding:30px;
-margin-top:50px;
+border-radius:15px;
+width:90%;
+max-width:400px;
+}
+.modal-content input,
+.modal-content textarea{
+width:100%;
+margin-bottom:10px;
+padding:8px;
+}
+.modal-content button{
+background:#ff4d6d;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:20px;
 }
 </style>
 </head>
@@ -151,61 +139,98 @@ margin-top:50px;
 
 <nav>
 <h2>💖 AmorDigital</h2>
-<a href="#muestras">Ver Invitaciones</a>
+<a href="#libro" onclick="abrirLibro()">Libro de Reclamaciones</a>
 </nav>
 
 <section class="hero">
 <h1>Invitaciones Digitales San Valentín</h1>
-<p>Sorprende con una invitación romántica, animada y personalizada.  
-Perfecta para enviar por WhatsApp o redes sociales.</p>
-<a href="#muestras" class="btn">Ver Diseños</a>
+<p>Diseños animados, personalizados y listos para sorprender. Calidad premium a precio accesible.</p>
+<a href="#planes" class="btn-main">Ver Planes</a>
 </section>
 
-<section class="section" id="muestras">
-<h2>Nuestras Muestras</h2>
+<section class="section" id="planes">
+<h2>Planes Disponibles</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7" alt="Invitación Romántica">
-<h3>Modelo Carta Animada 💌</h3>
-<p>Sobre animado con música y mensaje personalizado.</p>
+<img src="https://picsum.photos/500/300?random=1" alt="Invitación Básica IA">
+<div class="card-content">
+<h3>Plan Básico 💌</h3>
+<p>Diseño romántico animado personalizado.</p>
 <div class="price">S/ 15</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Hola%20quiero%20la%20invitación%20Modelo%20Carta%20Animada%20por%2015%20soles">
-Comprar por WhatsApp
+href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Básico%20S/15">
+Comprar
 </a>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1529336953121-6c2d2b5b7c29" alt="Invitación Minimalista">
-<h3>Modelo Minimalista ❤️</h3>
-<p>Diseño elegante con animación suave y fondo romántico.</p>
-<div class="price">S/ 15</div>
+<img src="https://picsum.photos/500/300?random=2" alt="Invitación Estándar IA">
+<div class="card-content">
+<h3>Plan Estándar 🎵</h3>
+<p>Incluye música romántica y animaciones extra.</p>
+<div class="price">S/ 18</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Hola%20quiero%20la%20invitación%20Modelo%20Minimalista%20por%2015%20soles">
-Comprar por WhatsApp
+href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Estándar%20S/18">
+Comprar
 </a>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b" alt="Invitación Premium">
-<h3>Modelo Premium 🎵</h3>
-<p>Incluye música de fondo, voz automática y efectos especiales.</p>
-<div class="price">S/ 15</div>
+<img src="https://picsum.photos/500/300?random=3" alt="Invitación Premium IA">
+<div class="card-content">
+<h3>Plan Premium 👑</h3>
+<p>Música, voz automática y efectos especiales avanzados.</p>
+<div class="price">S/ 20</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Hola%20quiero%20la%20invitación%20Modelo%20Premium%20por%2015%20soles">
-Comprar por WhatsApp
+href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Premium%20S/20">
+Comprar
 </a>
+</div>
 </div>
 
 </div>
 </section>
 
+<section class="payment">
+<h3>Pagos por Yape o Plin</h3>
+<p>Realiza tu pago y envíanos el comprobante por WhatsApp.</p>
+<div class="number">📲 930 246 091</div>
+</section>
+
+<section class="testimonials">
+<h2>Opiniones de Clientes</h2>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+"Mi pareja quedó encantada, súper recomendado." – Andrea M.
+</div>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+"Diseño hermoso y entrega rápida." – Luis P.
+</div>
+
+<div class="testimonial">
+⭐️⭐️⭐️⭐️⭐️  
+"Vale totalmente los 20 soles, muy profesional." – Camila R.
+</div>
+
+</section>
+
 <footer>
-© 2026 AmorDigital | Invitaciones Personalizadas 💕  
-Pedidos por WhatsApp: +51 930 246 091
+<h4>Derechos de Autor</h4>
+<p>© 2026 AmorDigital. Todos los diseños digitales están protegidos por derechos de autor.
+Queda prohibida su reventa o distribución sin autorización.</p>
+
+<br>
+
+<h4>Libro de Reclamaciones</h4>
+<p>Conforme al Código de Protección y Defensa del Consumidor.</p>
 </footer>
 
-</body>
-</html>
+<!-- MODAL LIBRO -->
+<div class="
