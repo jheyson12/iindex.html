@@ -25,7 +25,7 @@ position:relative;
 100%{background-position:0% 50%;}
 }
 
-/* Corazones */
+/* Corazones flotando */
 .heart{
 position:fixed;
 bottom:-50px;
@@ -38,7 +38,6 @@ opacity:0.7;
 100%{transform:translateY(-110vh);}
 }
 
-/* Header */
 header{
 text-align:center;
 padding:80px 20px;
@@ -51,14 +50,6 @@ font-family:'Playfair Display',serif;
 font-size:3rem;
 }
 
-/* Contador */
-.countdown{
-margin-top:20px;
-font-size:1.3rem;
-font-weight:bold;
-}
-
-/* Secciones */
 .section{padding:70px 20px;text-align:center;}
 
 .cards{
@@ -77,7 +68,6 @@ overflow:hidden;
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
 transition:0.4s;
 }
-
 .card:hover{transform:translateY(-15px) scale(1.05);}
 
 .card img{
@@ -119,18 +109,6 @@ margin-top:20px;
 border-radius:15px;
 }
 
-/* Garantía */
-.garantia{
-background:rgba(255,255,255,0.9);
-color:#333;
-padding:30px;
-border-radius:20px;
-max-width:600px;
-margin:30px auto;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* Reviews */
 .reviews{
 display:flex;
 flex-wrap:wrap;
@@ -156,15 +134,6 @@ margin-bottom:10px;
 border:3px solid #ff4e75;
 }
 
-/* Estrellas */
-.stars{
-color:gold;
-font-size:20px;
-margin-bottom:5px;
-cursor:pointer;
-}
-
-/* Form */
 .form-container{
 background:#fff;
 color:#333;
@@ -209,10 +178,17 @@ text-decoration:none;
 <body>
 
 <!-- Música romántica -->
-<audio autoplay loop>
+<audio id="musica" autoplay loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b7d2f4f8b.mp3?filename=romantic-love-110624.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+document.addEventListener("click",function(){
+document.getElementById("musica").play();
+});
+</script>
+
+<!-- Corazones -->
 <script>
 for(let i=0;i<25;i++){
 let heart=document.createElement("div");
@@ -227,50 +203,117 @@ document.body.appendChild(heart);
 <header>
 <h1>Invitaciones Románticas Premium</h1>
 <p>Diseños exclusivos para un momento inolvidable 💖</p>
-<div class="countdown" id="countdown"></div>
+<div id="countdown" style="margin-top:15px;font-weight:bold;font-size:1.2rem;"></div>
 </header>
 
 <script>
 var countDate=new Date("Feb 14, 2026 00:00:00").getTime();
-var x=setInterval(function(){
+setInterval(function(){
 var now=new Date().getTime();
 var distance=countDate-now;
 var days=Math.floor(distance/(1000*60*60*24));
 var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
 document.getElementById("countdown").innerHTML=
-"⏳ Faltan "+days+" días "+hours+"h "+minutes+"m para San Valentín";
+"⏳ Faltan "+days+" días "+hours+"h "+minutes+"m para San Valentín 💖";
 },1000);
 </script>
 
+<!-- PRODUCTOS -->
 <section class="section">
-<h2>Garantía de Satisfacción</h2>
-<div class="garantia">
-✔ 100% Personalizado<br>
-✔ Entrega rápida<br>
-✔ Soporte directo por WhatsApp<br>
-✔ Garantía de satisfacción o ajustes gratuitos
+<h2>Elige tu diseño</h2>
+<br>
+<div class="cards">
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg">
+<div class="card-content">
+<h3>Diseño Clásico</h3>
+<p>Invitación digital elegante y romántica. Personalización básica incluida.</p>
+<div class="price">S/ 15</div>
+<a href="#pago" class="button">Comprar</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/2072165/pexels-photo-2072165.jpeg">
+<div class="card-content">
+<h3>Diseño Premium</h3>
+<p>Diseño con detalles decorativos y efectos visuales especiales.</p>
+<div class="price">S/ 18</div>
+<a href="#pago" class="button">Comprar</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/1028714/pexels-photo-1028714.jpeg">
+<div class="card-content">
+<h3>Diseño Luxury</h3>
+<p>Invitación exclusiva con acabado sofisticado y personalización completa.</p>
+<div class="price">S/ 20</div>
+<a href="#pago" class="button">Comprar</a>
+</div>
+</div>
+
 </div>
 </section>
 
+<!-- PAGO -->
+<section class="section" id="pago">
+<h2>Pago Seguro</h2>
+
+<div class="qr-section" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;justify-content:center;">
+
+<div>
+<p><strong>Paga por Yape o Plin</strong></p>
+<h3>📱 930246091</h3>
+<img src="qr-yape.jpeg">
+</div>
+
+<div style="max-width:300px;text-align:left;">
+<h3>Método de Pago</h3>
+<p>
+1️⃣ Escanea el QR desde tu app.<br><br>
+2️⃣ Ingresa el monto (15,18 o 20).<br><br>
+3️⃣ Envía comprobante por WhatsApp.<br><br>
+4️⃣ Recibe tu diseño personalizado.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- GARANTÍA -->
+<section class="section">
+<h2>Garantía de Satisfacción</h2>
+<div style="background:#fff;color:#333;padding:30px;border-radius:20px;max-width:600px;margin:auto;">
+✔ 100% Personalizado<br><br>
+✔ Ajustes gratuitos<br><br>
+✔ Soporte directo<br><br>
+✔ Entrega rápida
+</div>
+</section>
+
+<!-- ESTRELLAS -->
 <section class="section">
 <h2>Califica nuestro servicio</h2>
-<div class="stars" onclick="rate(this)">★★★★★</div>
-<p id="rating-msg"></p>
+<div style="font-size:30px;color:gold;cursor:pointer;" onclick="calificar()">★★★★★</div>
+<p id="mensaje-calificacion"></p>
 </section>
 
 <script>
-function rate(el){
-document.getElementById("rating-msg").innerHTML="¡Gracias por tu calificación! 💖";
+function calificar(){
+document.getElementById("mensaje-calificacion").innerHTML="💖 ¡Gracias por tu calificación!";
 }
 </script>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/51930246091" target="_blank" class="whatsapp">💬</a>
 
 <footer>
 <p>© 2026 Invitaciones Románticas Premium - Todos los Derechos Reservados.</p>
 <p>Prohibida la reproducción total o parcial sin autorización escrita.</p>
-<p>Contenido protegido por la legislación vigente de derechos de autor.</p>
+<p>Contenido protegido por legislación de derechos de autor.</p>
 </footer>
 
 </body>
