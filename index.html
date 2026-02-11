@@ -3,274 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitaciones San Valentín | AmorDigital</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Invitaciones San Valentín | Diseño Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fafafa;color:#333}
-
-/* NAV */
-nav{
-background:#c9184a;
-color:white;
-padding:15px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
-nav h2{font-weight:700}
-nav a{color:white;text-decoration:none;font-weight:600}
 
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#ff4d6d,#ff758c);
-color:white;
+body{
+background:linear-gradient(135deg,#ff4e75,#ff8fa3,#ffc2d1);
+color:#fff;
+overflow-x:hidden;
+}
+
+header{
 text-align:center;
-padding:100px 20px;
-}
-.hero h1{font-size:2.8rem;margin-bottom:15px}
-.hero p{max-width:600px;margin:auto;margin-bottom:25px}
-.btn-main{
-background:white;
-color:#c9184a;
-padding:12px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
+padding:60px 20px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
-/* PLANES */
-.section{padding:70px 8%}
-.section h2{text-align:center;color:#c9184a;margin-bottom:40px}
+header h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+}
+
+header p{
+margin-top:10px;
+font-size:1.2rem;
+}
+
+.section{
+padding:60px 20px;
+text-align:center;
+}
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:30px;
 }
 
 .card{
-background:white;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+background:#fff;
+color:#333;
+border-radius:20px;
+width:320px;
 overflow:hidden;
-transition:.3s;
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+transition:0.4s;
 }
-.card:hover{transform:translateY(-5px)}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+}
+
 .card img{
 width:100%;
-height:220px;
+height:300px;
 object-fit:cover;
 }
-.card-content{padding:20px}
-.price{font-size:1.5rem;font-weight:700;color:#c9184a;margin:10px 0}
-.buy-btn{
-display:inline-block;
-background:#25D366;
-color:white;
-padding:10px 20px;
-border-radius:25px;
+
+.card-content{
+padding:20px;
+}
+
+.price{
+font-size:1.5rem;
+font-weight:bold;
+color:#e63946;
+margin:10px 0;
+}
+
+.button{
+background:#e63946;
+color:#fff;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
 text-decoration:none;
-margin-top:10px;
+display:inline-block;
 }
 
-/* QR */
-.payment{
-background:#fff0f3;
-padding:60px 8%;
-text-align:center;
+.button:hover{
+background:#b5172f;
 }
-.qr-img{
-width:260px;
-border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.15);
-margin-bottom:20px;
-}
-.payment h3{color:#c9184a}
 
-/* TESTIMONIOS */
-.testimonials{
+.qr-section{
 background:#fff;
-padding:70px 8%;
+color:#333;
+padding:40px;
+border-radius:20px;
+display:inline-block;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
-.testimonial{
+
+.qr-section img{
+width:220px;
+margin-top:20px;
+}
+
+.reviews{
 display:flex;
-align-items:center;
-gap:15px;
-background:#fafafa;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-margin-bottom:15px;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
 }
-.testimonial img{
-width:60px;
-height:60px;
+
+.review{
+background:#fff;
+color:#333;
+border-radius:20px;
+width:280px;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.review img{
+width:80px;
+height:80px;
 border-radius:50%;
 object-fit:cover;
-}
-.testimonial strong{color:#c9184a}
-
-/* FOOTER */
-footer{
-background:#222;
-color:white;
-padding:40px 8%;
-font-size:0.9rem;
-}
-
-/* MODAL LIBRO */
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-justify-content:center;
-align-items:center;
-}
-.modal-content{
-background:white;
-padding:25px;
-border-radius:12px;
-width:90%;
-max-width:400px;
-}
-.modal-content input,
-.modal-content textarea{
-width:100%;
 margin-bottom:10px;
-padding:8px;
 }
-.modal-content button{
-background:#c9184a;
-color:white;
-border:none;
-padding:10px 15px;
+
+.form-container{
+background:#fff;
+color:#333;
+padding:40px;
 border-radius:20px;
+max-width:600px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+footer{
+background:#111;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+footer p{
+font-size:0.9rem;
+color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>💖 AmorDigital</h2>
-<a href="#" onclick="abrirLibro()">Libro de Reclamaciones</a>
-</nav>
+<header>
+<h1>Invitaciones Románticas Premium</h1>
+<p>Diseños exclusivos para sorprender este San Valentín ❤️</p>
+</header>
 
-<section class="hero">
-<h1>Invitaciones Digitales Profesionales</h1>
-<p>Cartas románticas realistas, personalizadas y listas para sorprender.</p>
-<a href="#planes" class="btn-main">Ver Planes</a>
-</section>
-
-<section class="section" id="planes">
-<h2>Planes Disponibles</h2>
-
+<section class="section">
+<h2>Elige tu diseño</h2>
+<br>
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659">
+<img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46" alt="">
 <div class="card-content">
-<h3>Plan Básico</h3>
+<h3>Diseño Clásico Romántico</h3>
+<p>Elegante, delicado y lleno de amor.</p>
 <div class="price">S/ 15</div>
-<a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20Plan%20Básico%20S/15">Comprar</a>
+<a href="#pago" class="button">Comprar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b">
+<img src="https://images.unsplash.com/photo-1529336953121-3fef7d6b0d54" alt="">
 <div class="card-content">
-<h3>Plan Estándar</h3>
+<h3>Diseño Premium Corazones</h3>
+<p>Ideal para sorprender con estilo.</p>
 <div class="price">S/ 18</div>
-<a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20Plan%20Estándar%20S/18">Comprar</a>
+<a href="#pago" class="button">Comprar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1529336953121-6c2d2b5b7c29">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="">
 <div class="card-content">
-<h3>Plan Premium</h3>
+<h3>Diseño Exclusivo Luxury</h3>
+<p>El más elegante y sofisticado.</p>
 <div class="price">S/ 20</div>
-<a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20Plan%20Premium%20S/20">Comprar</a>
+<a href="#pago" class="button">Comprar</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<section class="payment">
-<h3>Pago Seguro</h3>
-<img src="qr-yape.jpeg" class="qr-img">
-<p><strong>Yape / Plin: 930 246 091</strong></p>
-<p>Titular: Jheyson Jampier Gaspar Ortiz</p>
-<p>Después de pagar envía tu comprobante por WhatsApp.</p>
+<section class="section" id="pago">
+<h2>Pago Seguro</h2>
+<br>
+<div class="qr-section">
+<p>Paga por Yape o Plin</p>
+<h3>📱 930246091</h3>
+<img src="qr-yape.jpeg" alt="QR Yape">
+<p>Escanea y envía tu comprobante</p>
+</div>
 </section>
 
-<section class="testimonials">
-<h2 style="text-align:center;color:#c9184a;margin-bottom:30px;">Clientes Satisfechos</h2>
+<section class="section">
+<h2>Opiniones de Clientes</h2>
+<br>
+<div class="reviews">
 
-<div class="testimonial">
+<div class="review">
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
-<div>
-<strong>Andrea M.</strong><br>
-⭐️⭐️⭐️⭐️⭐️ “Hermoso diseño, mi novio quedó encantado.”
-</div>
+<h4>María López</h4>
+<p>"Hermoso diseño, mi novio quedó encantado ❤️"</p>
 </div>
 
-<div class="testimonial">
+<div class="review">
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
-<div>
-<strong>Luis P.</strong><br>
-⭐️⭐️⭐️⭐️⭐️ “Muy profesional y rápido.”
-</div>
+<h4>Carlos Ramírez</h4>
+<p>"Excelente calidad y entrega rápida."</p>
 </div>
 
-<div class="testimonial">
+<div class="review">
 <img src="https://randomuser.me/api/portraits/women/65.jpg">
-<div>
-<strong>Camila R.</strong><br>
-⭐️⭐️⭐️⭐️⭐️ “Vale totalmente el precio.”
-</div>
+<h4>Andrea Torres</h4>
+<p>"Muy profesional, volveré a comprar."</p>
 </div>
 
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/45.jpg">
+<h4>Jorge Díaz</h4>
+<p>"Totalmente recomendado ⭐⭐⭐⭐⭐"</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Libro de Reclamaciones</h2>
+<br>
+<div class="form-container">
+<form>
+<input type="text" placeholder="Nombre Completo" required>
+<input type="email" placeholder="Correo Electrónico" required>
+<textarea rows="4" placeholder="Describe tu reclamo o comentario"></textarea>
+<textarea rows="3" placeholder="Mensaje directo al dueño de la página"></textarea>
+<button class="button">Enviar</button>
+</form>
+</div>
 </section>
 
 <footer>
-<h4>Derechos de Autor</h4>
-<p>© 2026 AmorDigital. Todos los diseños, animaciones y códigos están protegidos por la legislación vigente sobre propiedad intelectual. 
-Queda prohibida la reproducción, distribución o comercialización sin autorización expresa del titular.</p>
-
-<br>
-
-<h4>Libro de Reclamaciones</h4>
-<p>En cumplimiento del Código de Protección y Defensa del Consumidor.</p>
+<p>© 2026 Invitaciones Premium. Todos los derechos reservados.</p>
+<p>Diseños protegidos por derechos de autor. Prohibida su reproducción sin autorización.</p>
 </footer>
-
-<!-- MODAL LIBRO -->
-<div class="modal" id="libroModal">
-<div class="modal-content">
-<h3>Libro de Reclamaciones</h3>
-<input type="text" placeholder="Nombre Completo">
-<input type="email" placeholder="Correo Electrónico">
-<textarea rows="4" placeholder="Detalle del reclamo"></textarea>
-<button onclick="cerrarLibro()">Enviar</button>
-</div>
-</div>
-
-<script>
-function abrirLibro(){
-document.getElementById("libroModal").style.display="flex";
-}
-function cerrarLibro(){
-alert("Reclamo enviado correctamente.");
-document.getElementById("libroModal").style.display="none";
-}
-</script>
 
 </body>
 </html>
