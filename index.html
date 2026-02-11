@@ -8,12 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
 background:linear-gradient(-45deg,#ff4e75,#ff8fa3,#ffccd5,#ffc2d1);
@@ -30,19 +25,17 @@ position:relative;
 100%{background-position:0% 50%;}
 }
 
-/* Corazones flotando */
 .heart{
 position:fixed;
 bottom:-50px;
 font-size:20px;
 animation:float 10s linear infinite;
-color:#fff;
 opacity:0.7;
 }
 
 @keyframes float{
-0%{transform:translateY(0) scale(1);}
-100%{transform:translateY(-110vh) scale(1.5);}
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
 }
 
 header{
@@ -50,18 +43,11 @@ text-align:center;
 padding:80px 20px;
 background:rgba(0,0,0,0.4);
 backdrop-filter:blur(10px);
-box-shadow:0 10px 40px rgba(0,0,0,0.3);
 }
 
 header h1{
 font-family:'Playfair Display',serif;
 font-size:3rem;
-letter-spacing:2px;
-}
-
-header p{
-margin-top:10px;
-font-size:1.2rem;
 }
 
 .section{
@@ -77,19 +63,17 @@ gap:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.95);
 color:#333;
 border-radius:25px;
 width:320px;
 overflow:hidden;
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
 transition:0.4s;
-backdrop-filter:blur(5px);
 }
 
 .card:hover{
 transform:translateY(-15px) scale(1.05);
-box-shadow:0 30px 60px rgba(0,0,0,0.4);
 }
 
 .card img{
@@ -98,9 +82,7 @@ height:300px;
 object-fit:cover;
 }
 
-.card-content{
-padding:20px;
-}
+.card-content{padding:20px;}
 
 .price{
 font-size:1.6rem;
@@ -116,23 +98,16 @@ padding:12px 25px;
 border:none;
 border-radius:30px;
 cursor:pointer;
-transition:0.3s;
 text-decoration:none;
 display:inline-block;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
-
-.button:hover{
-transform:scale(1.1);
 }
 
 .qr-section{
-background:rgba(255,255,255,0.95);
+background:#fff;
 color:#333;
 padding:40px;
 border-radius:25px;
 display:inline-block;
-box-shadow:0 15px 40px rgba(0,0,0,0.3);
 }
 
 .qr-section img{
@@ -149,17 +124,12 @@ gap:25px;
 }
 
 .review{
-background:rgba(255,255,255,0.95);
+background:#fff;
 color:#333;
 border-radius:25px;
 width:280px;
 padding:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
-transition:0.3s;
-}
-
-.review:hover{
-transform:translateY(-10px);
 }
 
 .review img{
@@ -172,16 +142,16 @@ border:3px solid #ff4e75;
 }
 
 .form-container{
-background:rgba(255,255,255,0.95);
+background:#fff;
 color:#333;
 padding:40px;
 border-radius:25px;
-max-width:600px;
+max-width:700px;
 margin:auto;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-input, textarea{
+input, textarea, select{
 width:100%;
 padding:12px;
 margin:10px 0;
@@ -191,7 +161,7 @@ border:1px solid #ccc;
 
 footer{
 background:#111;
-padding:30px;
+padding:40px;
 text-align:center;
 margin-top:50px;
 }
@@ -199,9 +169,15 @@ margin-top:50px;
 footer p{
 font-size:0.9rem;
 color:#aaa;
+margin:5px 0;
 }
 
-/* Botón flotante WhatsApp */
+.legal{
+font-size:0.8rem;
+color:#777;
+margin-top:10px;
+}
+
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -211,24 +187,15 @@ color:#fff;
 padding:15px 18px;
 border-radius:50%;
 font-size:22px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
 text-decoration:none;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.15);}
-100%{transform:scale(1);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Corazones decorativos -->
 <script>
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
 let heart=document.createElement("div");
 heart.className="heart";
 heart.innerHTML="❤️";
@@ -240,7 +207,7 @@ document.body.appendChild(heart);
 
 <header>
 <h1>Invitaciones Románticas Premium</h1>
-<p>Haz que este San Valentín sea inolvidable 💖</p>
+<p>Diseños exclusivos para un momento inolvidable 💖</p>
 </header>
 
 <section class="section">
@@ -280,7 +247,6 @@ document.body.appendChild(heart);
 
 <section class="section" id="pago">
 <h2>Pago Seguro</h2>
-<br>
 <div class="qr-section">
 <p>Paga por Yape o Plin</p>
 <h3>📱 930246091</h3>
@@ -288,10 +254,71 @@ document.body.appendChild(heart);
 </div>
 </section>
 
+<section class="section">
+<h2>Opiniones de Clientes</h2>
+<div class="reviews">
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+<h4>María López</h4>
+<p>"Hermoso diseño, mi pareja quedó encantada 💕"</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/41.jpg">
+<h4>Carlos Ramírez</h4>
+<p>"Muy profesional y confiable."</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/52.jpg">
+<h4>Andrea Torres</h4>
+<p>"Excelente calidad y atención."</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/36.jpg">
+<h4>Jorge Díaz</h4>
+<p>"Entrega rápida y diseño increíble."</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/25.jpg">
+<h4>Lucía Herrera</h4>
+<p>"Volveré a comprar, totalmente recomendado."</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Libro de Reclamaciones</h2>
+<div class="form-container">
+<form>
+<input type="text" placeholder="Nombre Completo" required>
+<input type="email" placeholder="Correo Electrónico" required>
+<select required>
+<option value="">Tipo de solicitud</option>
+<option>Reclamo</option>
+<option>Queja</option>
+<option>Comentario</option>
+</select>
+<textarea rows="4" placeholder="Detalle del reclamo o comentario"></textarea>
+<textarea rows="3" placeholder="Mensaje directo al dueño de la página"></textarea>
+<button class="button">Enviar</button>
+</form>
+</div>
+</section>
+
 <a href="https://wa.me/51930246091" target="_blank" class="whatsapp">💬</a>
 
 <footer>
-<p>© 2026 Invitaciones Premium - Todos los derechos reservados.</p>
+<p>© 2026 Invitaciones Románticas Premium - Todos los Derechos Reservados.</p>
+<p>Prohibida la reproducción total o parcial sin autorización escrita.</p>
+<p class="legal">
+Este sitio web cumple con la normativa de protección al consumidor.  
+El contenido visual, diseños digitales y textos están protegidos por la legislación vigente sobre derechos de autor.
+</p>
 </footer>
 
 </body>
