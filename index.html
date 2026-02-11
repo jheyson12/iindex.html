@@ -8,7 +8,23 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fff;color:#333}
+body{background:#fff;overflow-x:hidden}
+
+/* ===== FONDO ANIMADO ===== */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#ff4d6d22 10%,transparent 10%) repeat;
+background-size:80px 80px;
+animation:moveBg 20s linear infinite;
+z-index:-1;
+}
+@keyframes moveBg{
+from{transform:translate(0,0)}
+to{transform:translate(-200px,-200px)}
+}
 
 /* NAV */
 nav{
@@ -18,6 +34,9 @@ padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 nav h2{font-weight:700}
 nav a{color:white;text-decoration:none;font-weight:600}
@@ -27,70 +46,164 @@ nav a{color:white;text-decoration:none;font-weight:600}
 background:linear-gradient(135deg,#ff4d6d,#ff758c);
 color:white;
 text-align:center;
-padding:100px 20px;
+padding:120px 20px;
 }
-.hero h1{font-size:3rem;margin-bottom:15px}
-.hero p{max-width:600px;margin:auto;margin-bottom:25px}
+.hero h1{
+font-size:3.2rem;
+margin-bottom:15px;
+animation:fadeIn 1.5s ease;
+}
+.hero p{max-width:600px;margin:auto;margin-bottom:25px;font-size:1.1rem}
 .btn-main{
-background:white;color:#ff4d6d;
-padding:12px 25px;border-radius:30px;
-text-decoration:none;font-weight:600;
+background:white;
+color:#ff4d6d;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 20px rgba(255,255,255,.6);
+transition:.4s;
+}
+.btn-main:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px white;
 }
 
-/* CARDS */
+/* CONTADOR */
+.countdown{
+margin-top:30px;
+font-size:1.3rem;
+font-weight:600;
+}
+
+/* SECCIÓN PLANES */
 .section{padding:80px 8%}
 .section h2{text-align:center;color:#ff4d6d;margin-bottom:50px}
+
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
+
 .card{
-background:#fff;
+background:white;
 border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+box-shadow:0 20px 40px rgba(0,0,0,.1);
 overflow:hidden;
-transition:.4s;
+transition:.5s;
 }
-.card:hover{transform:translateY(-8px)}
-.card img{width:100%;height:220px;object-fit:cover}
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
 .card-content{padding:20px}
-.price{font-size:1.6rem;font-weight:700;color:#ff4d6d;margin:10px 0}
+.price{
+font-size:1.7rem;
+font-weight:700;
+color:#ff4d6d;
+margin:10px 0;
+}
 .buy-btn{
 display:inline-block;
 background:#25D366;
 color:white;
-padding:10px 20px;
+padding:12px 22px;
 border-radius:25px;
 text-decoration:none;
 margin-top:10px;
+box-shadow:0 0 15px #25D366;
+transition:.3s;
+}
+.buy-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #25D366;
 }
 
-/* PAYMENT */
-.payment{
-background:#fff0f3;
-padding:50px 8%;
+/* QR SECTION */
+.payment-section{
+padding:90px 8%;
+background:linear-gradient(135deg,#fff0f3,#ffe5ec);
 text-align:center;
 }
-.payment h3{color:#ff4d6d;margin-bottom:15px}
-.number{
-font-size:1.8rem;
-font-weight:700;
-margin:15px 0;
+
+.payment-section h2{
+color:#ff4d6d;
+margin-bottom:15px;
+font-size:2rem;
+}
+
+.payment-text{
+margin-bottom:30px;
+font-size:1.1rem;
+}
+
+.payment-box{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:40px;
+}
+
+.qr-image{
+width:280px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.qr-image:hover{
+transform:scale(1.05);
+}
+
+.payment-info{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+max-width:350px;
+}
+
+.payment-info h3{
+color:#ff4d6d;
+margin-bottom:10px;
+font-size:1.5rem;
+}
+
+.security-badges{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+font-weight:600;
+color:#444;
 }
 
 /* TESTIMONIOS */
 .testimonials{
-background:#fafafa;
+background:#fff0f3;
 padding:80px 8%;
 }
 .testimonials h2{text-align:center;color:#ff4d6d;margin-bottom:40px}
+
 .testimonial{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,.05);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 margin-bottom:20px;
+transition:.4s;
+}
+.testimonial:hover{
+transform:translateY(-5px);
 }
 
 /* FOOTER */
@@ -100,37 +213,10 @@ color:white;
 padding:40px 8%;
 font-size:0.9rem;
 }
-footer h4{margin-bottom:10px}
-footer p{opacity:.8}
 
-/* MODAL LIBRO */
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-justify-content:center;
-align-items:center;
-}
-.modal-content{
-background:white;
-padding:30px;
-border-radius:15px;
-width:90%;
-max-width:400px;
-}
-.modal-content input,
-.modal-content textarea{
-width:100%;
-margin-bottom:10px;
-padding:8px;
-}
-.modal-content button{
-background:#ff4d6d;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:20px;
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -139,98 +225,103 @@ border-radius:20px;
 
 <nav>
 <h2>💖 AmorDigital</h2>
-<a href="#libro" onclick="abrirLibro()">Libro de Reclamaciones</a>
+<a href="#planes">Planes</a>
 </nav>
 
 <section class="hero">
-<h1>Invitaciones Digitales San Valentín</h1>
-<p>Diseños animados, personalizados y listos para sorprender. Calidad premium a precio accesible.</p>
+<h1>Invitaciones Digitales que Enamoran</h1>
+<p>Haz que tu declaración sea inolvidable con diseños animados y personalizados.</p>
 <a href="#planes" class="btn-main">Ver Planes</a>
+
+<div class="countdown" id="contador"></div>
 </section>
 
 <section class="section" id="planes">
-<h2>Planes Disponibles</h2>
+<h2>Elige Tu Plan</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://picsum.photos/500/300?random=1" alt="Invitación Básica IA">
+<img src="https://picsum.photos/500/300?random=10">
 <div class="card-content">
 <h3>Plan Básico 💌</h3>
-<p>Diseño romántico animado personalizado.</p>
 <div class="price">S/ 15</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Básico%20S/15">
-Comprar
-</a>
+href="https://wa.me/51930246091?text=Quiero%20Plan%20Básico%20S/15">Comprar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/500/300?random=2" alt="Invitación Estándar IA">
+<img src="https://picsum.photos/500/300?random=11">
 <div class="card-content">
 <h3>Plan Estándar 🎵</h3>
-<p>Incluye música romántica y animaciones extra.</p>
 <div class="price">S/ 18</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Estándar%20S/18">
-Comprar
-</a>
+href="https://wa.me/51930246091?text=Quiero%20Plan%20Estándar%20S/18">Comprar</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/500/300?random=3" alt="Invitación Premium IA">
+<img src="https://picsum.photos/500/300?random=12">
 <div class="card-content">
 <h3>Plan Premium 👑</h3>
-<p>Música, voz automática y efectos especiales avanzados.</p>
 <div class="price">S/ 20</div>
 <a class="buy-btn" target="_blank"
-href="https://wa.me/51930246091?text=Quiero%20el%20Plan%20Premium%20S/20">
-Comprar
-</a>
+href="https://wa.me/51930246091?text=Quiero%20Plan%20Premium%20S/20">Comprar</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<section class="payment">
-<h3>Pagos por Yape o Plin</h3>
-<p>Realiza tu pago y envíanos el comprobante por WhatsApp.</p>
-<div class="number">📲 930 246 091</div>
+<section class="payment-section">
+<h2>Pago Seguro con Yape o Plin</h2>
+<p class="payment-text">
+Escanea el QR oficial o paga directamente al número:
+</p>
+
+<div class="payment-box">
+<img src="qr-yape.jpg" alt="QR Yape Oficial" class="qr-image">
+
+<div class="payment-info">
+<h3>📲 930 246 091</h3>
+<p>Titular: Jheyson Jampier Gaspar Ortiz</p>
+<p>Después de pagar, envíanos el comprobante por WhatsApp.</p>
+<p style="margin-top:10px;color:#ff4d6d;font-weight:600;">
+🎁 Promoción válida hasta el 14 de febrero.
+</p>
+</div>
+</div>
+
+<div class="security-badges">
+<span>🔒 Pago 100% Seguro</span>
+<span>✔️ Entrega Garantizada</span>
+<span>⭐ Clientes Satisfechos</span>
+</div>
 </section>
 
 <section class="testimonials">
-<h2>Opiniones de Clientes</h2>
-
-<div class="testimonial">
-⭐️⭐️⭐️⭐️⭐️  
-"Mi pareja quedó encantada, súper recomendado." – Andrea M.
-</div>
-
-<div class="testimonial">
-⭐️⭐️⭐️⭐️⭐️  
-"Diseño hermoso y entrega rápida." – Luis P.
-</div>
-
-<div class="testimonial">
-⭐️⭐️⭐️⭐️⭐️  
-"Vale totalmente los 20 soles, muy profesional." – Camila R.
-</div>
-
+<h2>Clientes Felices ❤️</h2>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ “Increíble diseño, súper recomendado.”</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ “Muy profesional, mi novia quedó sorprendida.”</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️ “Entrega rápida y confiable.”</div>
 </section>
 
 <footer>
-<h4>Derechos de Autor</h4>
-<p>© 2026 AmorDigital. Todos los diseños digitales están protegidos por derechos de autor.
-Queda prohibida su reventa o distribución sin autorización.</p>
-
-<br>
-
-<h4>Libro de Reclamaciones</h4>
-<p>Conforme al Código de Protección y Defensa del Consumidor.</p>
+<p>📲 Yape / Plin: 930 246 091</p>
+<p>© 2026 AmorDigital - Todos los derechos reservados</p>
 </footer>
 
-<!-- MODAL LIBRO -->
-<div class="
+<script>
+const contador=document.getElementById("contador");
+const fecha=new Date("Feb 14, 2026 00:00:00").getTime();
+setInterval(()=>{
+const ahora=new Date().getTime();
+const distancia=fecha-ahora;
+const dias=Math.floor(distancia/(1000*60*60*24));
+contador.innerHTML="⏳ Faltan "+dias+" días para San Valentín";
+},1000);
+</script>
+
+</body>
+</html>
